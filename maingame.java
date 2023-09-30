@@ -3,13 +3,32 @@ class main {
     {
         var scanner = new java.util.Scanner(System.in);
 
-
-        var king = new chessPiece("white", "king", 1,1);
-        
+        var whiteKing = new chessPiece("white", "king", 1,1);
+        var pieceName = scanner.nextLine();
         var x = scanner.nextInt();
         var y = scanner.nextInt();
+        
 
-        var legal = king.legalMove(x,y);
-        System.out.println(legal);
+        
+
+
+        System.out.println(whiteKing.getposX());
+        System.out.println(whiteKing.getposY());
+        
+        switch (pieceName) 
+        {
+            case "white king":
+            {
+                if (whiteKing.legalMove(x, y))
+                {
+                    whiteKing.move(x,y);
+                }
+                    
+            }
+        }
+
+        System.out.println(whiteKing.getposX());
+        System.out.println(whiteKing.getposY());
+
     }
 }
