@@ -13,7 +13,9 @@ public class chessPiece {
 
     public boolean legalMove(int x, int y)//String color, String name, int x, int y)//, int x, int y)
     {
-        if (0 < x && x<8 && 0<y && y<8)
+        if (0 < x && x<8 && 0<y && y<8) {
+
+        
         switch(this.name)
         {
             case "king":
@@ -28,6 +30,7 @@ public class chessPiece {
                 
         }
 
+        }
         return false;
     }
     public void move(int x, int y)
