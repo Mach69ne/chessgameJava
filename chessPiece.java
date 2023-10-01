@@ -3,6 +3,8 @@ public class chessPiece {
     private String name;
     private int x;
     private int y;
+
+    // Constructor of Chess pieces
     public chessPiece(String color, String name, int x, int y)
     {
             this.color = color;
@@ -10,25 +12,25 @@ public class chessPiece {
             this.x = x;
             this.y = y;
     }
-
-    public boolean legalMove(int x, int y)//String color, String name, int x, int y)//, int x, int y)
+    // Check if move is legal or not
+    public boolean legalMove(int x, int y)
     {
         if (0 < x && x<8 && 0<y && y<8) {
 
         
-        switch(this.name)
-        {
-            case "king":
+            switch(this.name)
             {
-                var radiusX = Math.abs(x-this.x);
-                var radiusY = Math.abs(x-this.y);
-                if(radiusX <= 1 && radiusY <= 1)
+                case "king":
                 {
-                    return true;
+                    var radiusX = Math.abs(x-this.x);
+                    var radiusY = Math.abs(x-this.y);
+                    if(radiusX <= 1 && radiusY <= 1)
+                    {
+                        return true;
+                    }
                 }
+                    
             }
-                
-        }
 
         }
         return false;
@@ -38,6 +40,7 @@ public class chessPiece {
         this.x = x;
         this.y = y;
     }
+
     public int getposX()
     {
         return this.x;
